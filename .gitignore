@@ -1,0 +1,30 @@
+# Compiled files
+*.exe
+*.o
+*.obj
+*.dll
+*.so
+*.wasm
+
+# Build directories
+build/
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Operating system
+.DS_Store
+Thumbs.db

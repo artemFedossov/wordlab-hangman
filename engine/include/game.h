@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 typedef enum {
     FACIL = 1,
     NORMAL = 2,
@@ -16,3 +18,6 @@ typedef struct {
     Dificultad dificultad;
     EstadoPartida estado;
 } Partida;
+
+int obtenerVidasIniciales(Dificultad dificultad);
+bool reiniciarPartida(Partida *partida);

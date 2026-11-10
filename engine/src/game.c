@@ -1,31 +1,63 @@
 #include <stdio.h>
 #include "game.h"
 
+bool iniciarPartida(Partida *partida, Dificultad dificultad)
+{
+    if(partida == NULL || !validarDificultad(dificultad))
+        return false;
+
+    partida->dificultad = dificultad;
+
+    int vidas = obtenerVidasIniciales(partida->dificultad);
+
+    if(vidas <= 0)
+    {
+        return false;
+    }
+
+    partida->vidas = vidas;
+    partida->estado = EN_CURSO;
+
+    return true;
+    
+}
+
 int obtenerVidasIniciales(Dificultad dificultad) 
 {
-    int valor;
+    if(!validarDificultad(dificultad))
+    {
+        return -1;
+    }
+        
+    switch (dificultad)
+    {
+        case FACIL:
+            return 8;
+        case NORMAL:
+            return 6;
+        case DIFICIL:
+            return 5;            
+    }
+}
 
+bool validarDificultad(Dificultad dificultad)
+{
     switch (dificultad)
     {
     case FACIL:
-        valor = 8;
-        break;
+        return true;
     case NORMAL:
-        valor = 6;
-        break;
+        return true;
     case DIFICIL:
-        valor = 5;
-        break;
+        return true;
     default:
-        valor = -1;
+        return false;
     }
-
-    return valor;
 }
 
 bool reiniciarPartida(Partida *partida)
 {
-    if (partida == NULL)
+    if(partida == NULL)
     {
         return false;
     }

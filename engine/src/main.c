@@ -5,20 +5,11 @@ int main(void)
 {
     Partida miPartida;
 
-    miPartida.dificultad = NORMAL;
-    miPartida.estado = PERDIDA;
-    miPartida.vidas = 0;
+iniciarPartida(&miPartida, 10);
 
-    if(reiniciarPartida(&miPartida))
-    {
-        printf("Partida reiniciada correctamente");
-        printf("vidas: %d\n", miPartida.vidas);
-        printf("Estado: %d\n", miPartida.estado);
-    }
-    else
-    {
-        printf("Error al reiniciar la partida.\n");
-    }
+printf("Vidas: %d\n", miPartida.vidas);
+printf("Dificultad: %d\n", miPartida.dificultad);
+printf("Estado: %d\n", miPartida.estado);
 
-    return 0;
+return 0;
 }

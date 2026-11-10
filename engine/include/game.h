@@ -19,5 +19,7 @@ typedef struct {
     EstadoPartida estado;
 } Partida;
 
+bool iniciarPartida(Partida *partida, Dificultad dificultad);
 int obtenerVidasIniciales(Dificultad dificultad);
+bool validarDificultad(Dificultad dificultad);
 bool reiniciarPartida(Partida *partida);
